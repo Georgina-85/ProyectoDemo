@@ -1,0 +1,15 @@
+{% extends "appCoder/padre.html" %}
+{% load static %}
+{% block section_name %}
+<h3>Profesores</h3>
+{% endblock %}
+{% block contenidoQueCambia %}
+<h3>Edición de estudiantes</h3>
+
+  <form action="{% url 'EditarEstudiantes' estudiante_nombre %}" method="POST">{% csrf_token %}
+    <table>
+      {{miFormulario.as_table}}
+    </table>
+    <input type="submit" value="Editar estudiante">
+</form>
+{% endblock %}
